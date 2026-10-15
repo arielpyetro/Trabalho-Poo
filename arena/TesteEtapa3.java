@@ -1,3 +1,4 @@
+// Autor: Ariel Pyetro Fernandes pinheiro (2026006586)
 package arena;
 
 public class TesteEtapa3 {
