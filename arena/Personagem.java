@@ -34,6 +34,10 @@ public int getDefesa() {
     return defesa;
 }
 
+public int getvidaMaxima() {
+    return vidaMaxima;
+}
+
 public boolean estaVivo() {
     if (vida > 0) {
         return true;
@@ -74,4 +78,14 @@ public void atacar(Personagem alvo) {
 public String status() {
     return getNome() + "[HP " + getVida() + "/" + vidaMaxima + "]";
     }
+
+
+protected void modificarGuerreiro() {
+        ataque += 5;
+    }
+
+/* protected void modificarvida() {
+    vida = vidaMaxima;
+} */
+
 }

@@ -10,21 +10,7 @@ public class Mago extends Personagem {
     public int getMana() {
         return mana;
     }
-    public void curarAliado(Personagem aliado) {
-        if(estaVivo() == true) {
-            if(mana >= 15) {
-                mana -= 15;
-                
-                System.out.println(getNome() + " cura " + aliado.getNome() + ". " + aliado.status() + " (Mana: " + getMana() + ")");
-            }
-            else {
-                System.out.println();
-            }
-        }
-        else {
-            return;
-        }
-    }
+    
     @Override 
     public void atacar(Personagem alvo) {
         if(mana>= 10) {
@@ -33,6 +19,19 @@ public class Mago extends Personagem {
         }
         else {
             super.atacar(alvo);
+        }
+    }
+
+    public void curarAliado(Personagem aliado) {
+        if(estaVivo() == true) {
+            if(mana >= 15) {
+                mana-= 15;
+                aliado.curar(25);
+                System.out.println(getNome() + " cura " + aliado.getNome() +". " + aliado.status() + " (mana: " + getMana() + ")");
+            }
+            else {
+                System.out.println(getNome() + " não tem mana para curar");
+            }
         }
     }
 }

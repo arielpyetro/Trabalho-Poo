@@ -6,9 +6,6 @@ public class Guerreiro extends Personagem {
         super(nome, vidaMaxima, ataque, defesa);
         this.armadura = armadura;
    }
-    void gritoDeGuerra() {
-        System.out.println( getNome() + " solta um grito de guerra! " + " ataque agora: " + getAtaque()+5);
-   }
    @Override
 public int receberDano(int dano) {
     dano -= armadura;
@@ -17,7 +14,10 @@ public int receberDano(int dano) {
     }
     return super.receberDano(dano);
 }
-
+public void gritoGuerra() {
+    modificarGuerreiro();
+    System.out.println( getNome() + "Solta um grito de guerra!\nAtaque agora: " + getAtaque());
+}
    public int getArmadura() {
        return armadura;
    }
